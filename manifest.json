@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Clean Link",
+  "version": "0.1.0",
+  "description": "Removes tracking parameters from X/Twitter post links when you copy them.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://x.com/*", "*://*.x.com/*", "*://twitter.com/*", "*://*.twitter.com/*"],
+      "js": ["src/clean.js", "src/main-world.js"],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["*://x.com/*", "*://*.x.com/*", "*://twitter.com/*", "*://*.twitter.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "strip_post_tracking", "enabled": true, "path": "rules.json" }]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "clean-link@oomar20",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}

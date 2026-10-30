@@ -1,0 +1,16 @@
+{
+  "name": "clean-link",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Strips tracking parameters from copied X/Twitter post links.",
+  "scripts": {
+    "test": "node --test",
+    "lint": "web-ext lint",
+    "build": "web-ext build --overwrite-dest",
+    "run:firefox": "web-ext run",
+    "run:chrome": "web-ext run -t chromium"
+  },
+  "devDependencies": {
+    "web-ext": "^10.8.0"
+  }
+}

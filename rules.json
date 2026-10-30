@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "condition": {
+      "regexFilter": "^(https?://(?:www\\.|mobile\\.)?(?:x|twitter)\\.com/(?:[A-Za-z0-9_]+|i/web)/status/[0-9]+(?:/[^?#]*)?)\\?.*$",
+      "resourceTypes": ["main_frame"]
+    },
+    "action": {
+      "type": "redirect",
+      "redirect": { "regexSubstitution": "\\1" }
+    }
+  }
+]
