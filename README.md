@@ -1,4 +1,4 @@
-# Clean Link
+# LinkClean
 
 A Chrome and Firefox extension that removes the tracking part of X/Twitter post links:
 
@@ -19,7 +19,7 @@ It only touches post links (`/{user}/status/{id}` on `x.com`, `twitter.com` and 
 
 **Chrome:** go to `chrome://extensions`, turn on **Developer mode**, click **Load unpacked** and pick this folder.
 
-**Firefox (142 or newer):** go to `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…** and pick `manifest.json`. Temporary add-ons are removed when Firefox restarts. For a Flatpak Firefox or Zen, run `npm run build` and load the zip from `web-ext-artifacts/` instead: the Flatpak file picker only passes the one file you pick through to the browser, so loading `manifest.json` leaves the scripts and icons behind. If links aren't being cleaned, open `about:addons` → Clean Link → **Permissions** and allow access to x.com and twitter.com.
+**Firefox (142 or newer):** go to `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…** and pick `manifest.json`. Temporary add-ons are removed when Firefox restarts. For a Flatpak Firefox or Zen, run `npm run build` and load the zip from `web-ext-artifacts/` instead: the Flatpak file picker only passes the one file you pick through to the browser, so loading `manifest.json` leaves the scripts and icons behind. If links aren't being cleaned, open `about:addons` → LinkClean → **Permissions** and allow access to x.com and twitter.com.
 
 You can also launch a fresh browser profile with the extension loaded:
 
@@ -44,3 +44,9 @@ npm run build   # zip for store upload, written to web-ext-artifacts/
 | `manifest.json` | Manifest V3, shared by Chrome and Firefox |
 
 The content script runs in the page's own JavaScript context (`"world": "MAIN"`) so it can wrap the clipboard functions X's code calls. It hooks browser APIs rather than X's page layout, so redesigns of the site don't break it.
+
+## License
+
+[MIT](LICENSE)
+
+LinkClean is an independent project and is not affiliated with, endorsed by, or sponsored by X Corp. X and Twitter are trademarks of their respective owners.

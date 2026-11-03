@@ -1,7 +1,8 @@
 {
-  "name": "clean-link",
+  "name": "linkclean",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "Strips tracking parameters from copied X/Twitter post links.",
   "scripts": {
     "test": "node --test",

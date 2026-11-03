@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Clean Link",
+  "name": "LinkClean",
   "version": "1.0.0",
   "description": "Removes tracking parameters from X/Twitter post links when you copy them.",
   "icons": {

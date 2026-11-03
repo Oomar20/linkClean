@@ -20,7 +20,7 @@
       try {
         return wrapped.apply(this, args);
       } catch (err) {
-        console.warn('[clean-link]', err);
+        console.warn('[linkclean]', err);
         return original.apply(this, args);
       }
     };
@@ -119,6 +119,6 @@
     const cleaned = cleanTweetUrls(location.href);
     if (cleaned !== location.href) history.replaceState(history.state, '', cleaned);
   } catch (err) {
-    console.warn('[clean-link]', err);
+    console.warn('[linkclean]', err);
   }
 })();
